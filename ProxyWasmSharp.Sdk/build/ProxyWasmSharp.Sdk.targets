@@ -1,0 +1,7 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ItemGroup>
+        <WasiNativeFileReference Include="$(MSBuildThisFileDirectory)..\native\*.c" />
+    </ItemGroup>
+
+</Project>

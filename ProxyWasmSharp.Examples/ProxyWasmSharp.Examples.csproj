@@ -1,10 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- Only needed when referencing the dependencies as projects. For package references, these are imported automatically. -->
+  <Import Project="..\ProxyWasmSharp.Sdk\build\ProxyWasmSharp.Sdk.props" />
+  
+  
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AdditionalExports>,--export=proxy_abi_version_0_2_0</AdditionalExports>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Wasi.Sdk" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProxyWasmSharp.Sdk\ProxyWasmSharp.Sdk.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\ProxyWasmSharp.Sdk\build\ProxyWasmSharp.Sdk.targets" />
 </Project>

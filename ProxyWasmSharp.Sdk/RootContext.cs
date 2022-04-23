@@ -1,5 +1,6 @@
 ﻿namespace ProxyWasmSharp.Sdk;
-public class Class1
-{
 
+public class RootContext
+{
+    
 }
